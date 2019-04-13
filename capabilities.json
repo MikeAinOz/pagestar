@@ -1,0 +1,89 @@
+{
+    "dataRoles": [
+        
+        {
+            "displayName": "User Name",
+            "name": "measure",
+            "kind": "Measure"
+        }
+    ],
+    "objects": {
+        "url":{
+            "displayName": "Url",
+            "properties" : {
+                "targetUrl":{
+                    "displayName": "Target URL",
+                        "type": {
+                        "text": true
+                        }
+                    }
+                }
+            },
+        "page":{
+            "displayName": "Page",
+            "properties" : {
+                "pageName":{
+                    "displayName": "Page Name",
+                        "type": {
+                        "text": true
+                        }
+                    }
+                }
+            },
+        "dataPoint": {
+            "displayName": "Data colors",
+            "properties": {
+                "defaultColor": {
+                    "displayName": "Default color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "showAllDataPoints": {
+                    "displayName": "Show all",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fill": {
+                    "displayName": "Fill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fillRule": {
+                    "displayName": "Color saturation",
+                    "type": {
+                        "fill": {}
+                    }
+                },
+                 "fontSize": {
+                    "displayName": "Text Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                { "measure": { "max": 1 } }
+            ],
+            "single": {
+                "role": "measure"
+            }
+           }
+    ]
+}
