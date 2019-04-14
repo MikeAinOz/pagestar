@@ -15,7 +15,7 @@
     "email": ""
   },
   "assets": {
-    "icon": "assets/Starability.png"
+    "icon": "assets/PageStarIcon.png"
   },
   "externalJS": [
     "node_modules/powerbi-visuals-utils-dataviewutils/lib/index.js",
