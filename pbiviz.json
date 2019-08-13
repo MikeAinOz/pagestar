@@ -9,7 +9,7 @@
     "supportUrl": "",
     "gitHubUrl": ""
   },
-  "apiVersion": "2.3.0",
+  "apiVersion": "2.6.0",
   "author": {
     "name": "",
     "email": ""
@@ -17,12 +17,9 @@
   "assets": {
     "icon": "assets/PageStarIcon.png"
   },
-  "externalJS": [
-    "node_modules/powerbi-visuals-utils-dataviewutils/lib/index.js",
-    "node_modules/jquery/dist/jquery.min.js"
-  ],
+  "externalJS": [],
   "style": "style/visual.less",
   "capabilities": "capabilities.json",
-  "dependencies": "dependencies.json",
+  "dependencies": null,
   "stringResources": []
 }

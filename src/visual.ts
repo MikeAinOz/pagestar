@@ -23,10 +23,20 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
  */
-import DataViewObjects = powerbi.extensibility.utils.dataview.DataViewObjects;
 
-module powerbi.extensibility.visual {
-    "use strict";
+"use strict";
+import "core-js/stable";
+import "./../style/visual.less";
+import powerbi from "powerbi-visuals-api";
+import VisualConstructorOptions = powerbi.extensibility.visual.VisualConstructorOptions;
+import VisualUpdateOptions = powerbi.extensibility.visual.VisualUpdateOptions;
+import IVisual = powerbi.extensibility.visual.IVisual;
+import EnumerateVisualObjectInstancesOptions = powerbi.EnumerateVisualObjectInstancesOptions;
+import VisualObjectInstance = powerbi.VisualObjectInstance;
+import DataView = powerbi.DataView;
+import VisualObjectInstanceEnumerationObject = powerbi.VisualObjectInstanceEnumerationObject;
+
+import { VisualSettings } from "./settings";
     export class Visual implements IVisual {
         private target: HTMLElement;
         private settings: VisualSettings;
@@ -181,4 +191,4 @@ module powerbi.extensibility.visual {
             return VisualSettings.enumerateObjectInstances(this.settings || VisualSettings.getDefault(), options);
         }
     }
-}
+    
