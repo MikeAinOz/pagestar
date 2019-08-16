@@ -27,6 +27,7 @@
 "use strict";
 import "core-js/stable";
 import "./../style/visual.less";
+import * as $ from "jquery";
 import powerbi from "powerbi-visuals-api";
 import VisualConstructorOptions = powerbi.extensibility.visual.VisualConstructorOptions;
 import VisualUpdateOptions = powerbi.extensibility.visual.VisualUpdateOptions;
