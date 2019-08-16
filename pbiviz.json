@@ -5,14 +5,14 @@
     "guid": "pagestarFE93C05B317D40CFB045D753AB0D4464",
     "visualClassName": "Visual",
     "version": "1.0.0",
-    "description": "",
-    "supportUrl": "",
-    "gitHubUrl": ""
+    "description": "Rate a page",
+    "supportUrl": "https://paradigmbi.com.au/",
+    "gitHubUrl": "https://github.com/MikeAinOz/pagestar"
   },
   "apiVersion": "2.6.0",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Mike Allen",
+    "email": "mike@mikeallen.com.au"
   },
   "assets": {
     "icon": "assets/PageStarIcon.png"
