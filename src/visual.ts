@@ -76,7 +76,7 @@ import { VisualSettings } from "./settings";
                 const new_pm = document.createElement("p");
                 new_pm.setAttribute('id',"final_msg");
                 new_pm.hidden = true;
-                var new_message = document.createTextNode("Rating Received");
+                var new_message = document.createTextNode("Page Rating Received");
                 new_pm.appendChild(new_message);
                 this.target.appendChild(new_pm);
             }
