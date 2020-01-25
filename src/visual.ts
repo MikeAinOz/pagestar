@@ -42,25 +42,15 @@ import { VisualSettings } from "./settings";
         private target: HTMLElement;
         private settings: VisualSettings;
         private urlNode: Text;
-        private targetUrl: string;
+        static targetUrl: string;
+        static pageName: string;
+        static userName: string;
 
         constructor(options: VisualConstructorOptions) {
             console.log('Visual constructor', options);
             this.target = options.element;
-            this.targetUrl = "url not set"
             if (typeof document !== "undefined") {
-                // hidden url
-                const new_ph = document.createElement("p");
-                new_ph.setAttribute('id',"hidden_url");
-                new_ph.setAttribute('class',"hidden_url)");
-                new_ph.hidden = true;
-                
-                this.urlNode = document.createTextNode(this.targetUrl);
-                new_ph.appendChild(this.urlNode);
-                this.target.appendChild(new_ph);
-                //
                 const new_f: HTMLElement = document.createElement("div");
-                
                 new_f.appendChild(starability());
                 var new_b = document.createElement("input");
                 new_b.setAttribute('type', "submit");
@@ -118,9 +108,9 @@ import { VisualSettings } from "./settings";
                 return fieldset;
             }
             function getRadioVal(form) {
-                var val;
+                let val:string = "";
                 // get list of radio buttons 
-                var radios = form.getElementsByTagName("input");                
+                let radios = form.getElementsByTagName("input");                
                 // loop through list of radio buttons
                 for (var i=0, len=radios.length; i<len; i++) {
                     if ( radios[i].checked ) { // radio checked?
@@ -133,15 +123,10 @@ import { VisualSettings } from "./settings";
 
             function btnClick(val){
                 console.log('btnClick');  
-                var datanode = document.getElementById("hidden_url");               
-                var userName = datanode.dataset.userName ;
-                var pageName = datanode.dataset.pageName ;
-                var obj =    { pageName: pageName, userName : userName , value : val   };  
-                var sendData = JSON.stringify(obj);              
-                var postUrl = datanode.dataset.url;
-
+                let obj =    { pageName: Visual.pageName, userName : Visual.userName , value : val   };  
+                let sendData = JSON.stringify(obj);             
                 $.ajax({
-                    url: postUrl,
+                    url: Visual.targetUrl,
                     type:"POST",
                     data: sendData,
                     contentType:"application/json; charset=utf-8",
@@ -165,16 +150,10 @@ import { VisualSettings } from "./settings";
             
             //console.log('Update settings', this.settings);
             let dataViews = options.dataViews;
-            let userName = dataViews[0].single.value;            
-            let datanode = document.getElementById("hidden_url");
-            
-            datanode.dataset.url = this.settings.url.targetUrl;
-            datanode.dataset.pageName = this.settings.page.pageName;
-            datanode.dataset.userName = String(userName);
-            
-            this.urlNode.textContent = this.settings.url.targetUrl;
-           
-            var norate : HTMLInputElement = document.getElementById("no-rate") as HTMLInputElement;
+            Visual.userName = String(dataViews[0].single.value);            
+            Visual.targetUrl = this.settings.url.targetUrl;
+            Visual.pageName = this.settings.page.pageName;                     
+            let norate : HTMLInputElement = document.getElementById("no-rate") as HTMLInputElement;
             norate.checked = true;  
             //console.log('Update Completed');         
         }
