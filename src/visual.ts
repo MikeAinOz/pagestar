@@ -41,7 +41,6 @@ import { VisualSettings } from "./settings";
     export class Visual implements IVisual {
         private target: HTMLElement;
         private settings: VisualSettings;
-        private urlNode: Text;
         static targetUrl: string;
         static pageName: string;
         static userName: string;
