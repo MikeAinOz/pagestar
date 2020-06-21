@@ -6,3 +6,4 @@ typings
 .api
 *.log
 webpack*.html
+webpack.statistics.prod.html
